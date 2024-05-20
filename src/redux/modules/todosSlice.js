@@ -33,11 +33,9 @@ const todosSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(__addToDo.fulfilled, (state, action) => {
-        console.log(`action.payload __addToDo: ${JSON.stringify(action.payload)}`);
         state.list.push(action.payload);
       })
       .addCase(__deleteTodo.fulfilled, (state, action) => {
-        console.log(`action.payload __deleteToDo: ${JSON.stringify(action.payload)}`);
         state.list = state.list.filter((todo) => todo.id !== action.payload);
       });
   }
